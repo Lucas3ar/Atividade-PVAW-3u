@@ -1,0 +1,40 @@
+
+mat-paginator {
+    margin-top: 140px; 
+    border-radius: 20px; 
+    background-color: #838383; 
+    color: rgb(255, 255, 255);
+  }
+  
+  .add-button {
+    width: 120px;
+    position: fixed;
+    top: 600px; 
+    right: 20px; 
+    background-color: #dddddd; 
+    color: rgb(38, 38, 43); 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .add-button:hover {
+    background-color: #232630; 
+  }
+  
+  .form-container {
+    background-color: #828486; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+    width: 300px;
+    margin-top: 80px; 
+    align-self: center; 
+  }
+  .pc-actions {
+    display: fixed;   
+    align-items: center; 
+    width: 20%;
+    top: -400px;
+  }

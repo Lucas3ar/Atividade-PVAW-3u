@@ -1,0 +1,109 @@
+
+html, body { 
+  height: 100%; 
+}
+
+body {
+  background-color:rgb(160, 160, 160);
+}
+
+mat-checkbox{
+  color:white ;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+  align-items: flex-start;
+  border-radius: 50%;
+  color: rgb(255, 255, 255); 
+  text-decoration-color: azure;
+}
+
+.site-header {
+  text-align: center;
+  height: 550px;
+  width:500;
+  background-color: #787b7e;
+  border-bottom: 2px solid #282c2a;
+}
+
+.icon-container {
+  margin-top: 10px;
+}
+
+.site-icon {
+  width: 550px; 
+  height: 550px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  height: 200vh;
+}
+
+.pc-info {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 5px; 
+  margin-bottom: 10px; 
+  border: 1px solid #b8b8b8; 
+  border-radius: 8px; 
+  color: rgb(0, 0, 0);
+  height:auto;
+  width:100%;
+}
+
+.pc-text p {
+  margin: 5px 0; 
+  font-size: 14px; 
+  line-height: 3.4;
+}
+
+.pc-list {
+  background-color: #dbdcdd;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  width: 1100px;
+  height: auto; 
+  max-height: 60%; 
+  overflow-y: auto; 
+  word-wrap: break-word; 
+}
+
+.pc-text {
+  display: flex; 
+  flex-direction: row;
+  gap: 5px;
+  width: 70%;
+}
+
+
+.close-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: #dbdcdd;
+}
+
+.close-button:hover {
+  color: rgb(26, 27, 26);
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #dbdcdd; 
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: rgb(10, 10, 10);
+}

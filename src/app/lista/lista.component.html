@@ -1,0 +1,76 @@
+<app-pesquisar (filter)="filterpc($event)"></app-pesquisar>
+
+<div class="container">
+    <button 
+      mat-fab 
+      color="primary" 
+      class="add-button" 
+      (click)="toggleForm()">
+      Adicionar Computador
+    </button>
+  
+    <div class="pc-list">
+      <mat-list>
+        <mat-list-item *ngFor="let pc of paginatedpc; let i = index">
+          <div class="pc-info">
+            <div class="pc-text">
+              <p><strong>{{ pc.name }}</strong></p>
+              <p> Peso: {{ pc.gpu }} Preço: R$ {{ pc.price }} Tipo: {{ pc.tipo.join(', ') }}</p>
+              <p> Marca: {{ pc.marca }}</p>
+            </div>
+            <div class="pc-actions">
+              <button mat-raised-button color="accent" (click)="editpc(i)">Editar</button>
+              <button mat-raised-button color="warn" (click)="deletepc(i)">Apagar</button>
+            </div>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    
+      <p *ngIf="filteredpc.length === 0">Não Há Nenhum Desse Tipo.</p>
+    
+      <mat-paginator #paginator [length]="filteredpc.length" 
+                     [pageSize]="itemsPerPage" 
+                     [pageSizeOptions]="[5]"
+                     (page)="pageChanged($event)">
+      </mat-paginator>
+    </div>
+
+    
+    <div class="form-container" *ngIf="showForm">
+      <button mat-icon-button class="close-button" (click)="toggleForm()">
+        <mat-icon>X</mat-icon>
+      </button>
+      <h2>Adicionar</h2>
+      <form (ngSubmit)="addpc()">
+        <mat-form-field>
+          <input matInput placeholder="Nome" [(ngModel)]="formData.name" name="name" required />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <textarea matInput placeholder="GPU" [(ngModel)]="formData.peso" name="gpu" type="number" required></textarea>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Preço" [(ngModel)]="formData.price" name="price" type="number" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Marca" [(ngModel)]="formData.marca" name="marca" type="string" required />
+        </mat-form-field>
+  
+        <div class="checkbox-group">
+          <h3>Selecione o tipo</h3>
+          <div *ngFor="let type of Tipopc">
+            <mat-checkbox 
+              [checked]="formData.tipo.includes(type)" 
+              (change)="ontipoChange(type, $event.checked)">
+              {{ type }}
+            </mat-checkbox>
+          </div>
+        </div>
+  
+        <button mat-raised-button color="primary" type="submit">Adicionar Computador</button>
+      </form>
+    </div>
+  </div>
+  

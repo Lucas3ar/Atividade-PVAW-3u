@@ -1,0 +1,12 @@
+<div class="search-form">
+    <h3>Filtrar por Categoria</h3>
+    <mat-checkbox [(ngModel)]="selectedCategories.gaming" (change)="onCategoryChange()">
+      Gaming
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="selectedCategories.desktop" (change)="onCategoryChange()">
+      Desktop
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="selectedCategories.notebook" (change)="onCategoryChange()">
+      Notebook
+    </mat-checkbox>
+  </div>
